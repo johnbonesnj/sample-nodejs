@@ -593,11 +593,11 @@ function generateSeed(path) {
 function randomPage(req, res) {
   var seed = generateSeed(req.hostname + req.path);
 
-  var title = randomTitle(seed);
+  var title = "hookTest";
   var paragraphs = randomParagraphs(seed);
   var links = randomLinks(seed, req.hostname);
 
-  res.render('random', {title: title, paragraphs: paragraphs, links: links});
+  res.render('index', {title: title, paragraphs: paragraphs, links: links});
 }
 
 router.all('*', randomPage);
